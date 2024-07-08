@@ -1,0 +1,14 @@
+Employee No.,Last Name,First Name,Month,Day,Year,Type,Status,Payable
+2,Lim,Antonio,February,5,2024,Sick,Approved,Paid
+2,Lim,Antonio,February,17,2024,Sick,Approved,Paid
+2,Lim,Antonio,February,28,2024,Sick,Pending,Pending
+2,Lim,Antonio,January,5,2024,Vacation,Pending,Pending
+1,Garcia,Manuel III,January,3,2024,Vacation,Approved,Unpaid
+1,Garcia,Manuel III,February,23,2024,Leave of Absence,Pending,Pending
+1,Garcia,Manuel III,January,4,2024,Sick,Rejected,Unpaid
+1,Garcia,Manuel III,March,18,2024,Vacation,Pending,Pending
+1,Garcia,Manuel III,January,18,2024,Vacation,Pending,Pending
+2,Lim,Antonio,June,8,2024,Sick,Pending,Pending
+2,Lim,Antonio,June,9,2024,Sick,Pending,Pending
+2,Lim,Antonio,June,10,2024,Sick,Pending,Pending
+1,Garcia,Manuel III,February,12,2024,Vacation,Pending,Pending
