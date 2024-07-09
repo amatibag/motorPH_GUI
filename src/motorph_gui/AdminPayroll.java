@@ -34,8 +34,10 @@ public class AdminPayroll extends javax.swing.JFrame {
      * Creates new form AdminPayroll
      */
     public AdminPayroll(String username) {
+        
         initComponents();
         setIconImage();
+        initializeHourlyText();
         applyDocumentFilters();
         
         setLoginName(username);
@@ -396,6 +398,38 @@ private void calculateLeaveDeduction(String employeeNumber, List<String> unpaidL
         jButton29 = new javax.swing.JButton();
         jButton30 = new javax.swing.JButton();
         jButton31 = new javax.swing.JButton();
+        btnEditTime = new javax.swing.JButton();
+        jLabel80 = new javax.swing.JLabel();
+        jPTypeMonthly2 = new javax.swing.JTextField();
+        jComboBoxPayType1 = new javax.swing.JComboBox<>();
+        jLabel81 = new javax.swing.JLabel();
+        jLabel82 = new javax.swing.JLabel();
+        lunchDed = new javax.swing.JTextField();
+        jLabel83 = new javax.swing.JLabel();
+        adjEarning3 = new javax.swing.JTextField();
+        jLabel84 = new javax.swing.JLabel();
+        otRate3 = new javax.swing.JTextField();
+        jCheckPayAllowance2 = new javax.swing.JCheckBox();
+        jLabel85 = new javax.swing.JLabel();
+        adjBene3 = new javax.swing.JTextField();
+        jCheckUnpaidLeave3 = new javax.swing.JCheckBox();
+        paidLeave = new javax.swing.JTextField();
+        jScrollPane6 = new javax.swing.JScrollPane();
+        jTextAreaPaidLeave = new javax.swing.JTextArea();
+        jLabel86 = new javax.swing.JLabel();
+        jScrollPane7 = new javax.swing.JScrollPane();
+        jTCalcNote2 = new javax.swing.JTextArea();
+        btnSemi1 = new javax.swing.JButton();
+        jLabel87 = new javax.swing.JLabel();
+        totRegHrs = new javax.swing.JTextField();
+        jLabel88 = new javax.swing.JLabel();
+        overTimeHrs = new javax.swing.JTextField();
+        jLabel89 = new javax.swing.JLabel();
+        jLabel90 = new javax.swing.JLabel();
+        jLabel91 = new javax.swing.JLabel();
+        rice3 = new javax.swing.JLabel();
+        phone3 = new javax.swing.JLabel();
+        clothing3 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
@@ -542,6 +576,7 @@ private void calculateLeaveDeduction(String employeeNumber, List<String> unpaidL
         getContentPane().add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 163, -1, -1));
 
         jPanel1.setBackground(new java.awt.Color(60, 126, 114));
+        jPanel1.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel4.setForeground(new java.awt.Color(255, 255, 255));
@@ -549,7 +584,9 @@ private void calculateLeaveDeduction(String employeeNumber, List<String> unpaidL
         jPanel1.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(630, 13, -1, -1));
 
         jPTypeMonthly.setEditable(false);
+        jPTypeMonthly.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPTypeMonthly.setText("Monthly");
+        jPTypeMonthly.setBorder(null);
         jPTypeMonthly.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jPTypeMonthly.setEnabled(false);
         jPanel1.add(jPTypeMonthly, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 10, 100, 25));
@@ -674,6 +711,7 @@ private void calculateLeaveDeduction(String employeeNumber, List<String> unpaidL
         jTabbedPane1.addTab("Monthly", jPanel1);
 
         jPanel2.setBackground(new java.awt.Color(60, 126, 114));
+        jPanel2.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel30.setForeground(new java.awt.Color(255, 255, 255));
@@ -681,7 +719,9 @@ private void calculateLeaveDeduction(String employeeNumber, List<String> unpaidL
         jPanel2.add(jLabel30, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 13, -1, -1));
 
         jPTypeMonthly1.setEditable(false);
+        jPTypeMonthly1.setHorizontalAlignment(javax.swing.JTextField.CENTER);
         jPTypeMonthly1.setText("Semi-Monthly");
+        jPTypeMonthly1.setBorder(null);
         jPTypeMonthly1.setDisabledTextColor(new java.awt.Color(0, 0, 0));
         jPTypeMonthly1.setEnabled(false);
         jPTypeMonthly1.addActionListener(new java.awt.event.ActionListener() {
@@ -814,6 +854,7 @@ private void calculateLeaveDeduction(String employeeNumber, List<String> unpaidL
         jTabbedPane1.addTab("Semi Monthly", jPanel2);
 
         jPanel3.setBackground(new java.awt.Color(60, 126, 114));
+        jPanel3.setBorder(javax.swing.BorderFactory.createBevelBorder(javax.swing.border.BevelBorder.RAISED));
         jPanel3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         jLabel44.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
@@ -1709,9 +1750,205 @@ private void calculateLeaveDeduction(String employeeNumber, List<String> unpaidL
         jButton31.setBorder(null);
         jPanel3.add(jButton31, new org.netbeans.lib.awtextra.AbsoluteConstraints(430, 325, 50, 18));
 
+        btnEditTime.setBackground(new java.awt.Color(210, 89, 51));
+        btnEditTime.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        btnEditTime.setForeground(new java.awt.Color(255, 255, 255));
+        btnEditTime.setText("Edit Time Card");
+        btnEditTime.setBorder(null);
+        jPanel3.add(btnEditTime, new org.netbeans.lib.awtextra.AbsoluteConstraints(390, 355, 90, 20));
+
+        jLabel80.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel80.setText("Payroll Type:");
+        jPanel3.add(jLabel80, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 5, -1, -1));
+
+        jPTypeMonthly2.setEditable(false);
+        jPTypeMonthly2.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jPTypeMonthly2.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        jPTypeMonthly2.setText("Hourly");
+        jPTypeMonthly2.setBorder(null);
+        jPTypeMonthly2.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        jPTypeMonthly2.setEnabled(false);
+        jPTypeMonthly2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                jPTypeMonthly2ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(jPTypeMonthly2, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 5, 100, 20));
+
+        jComboBoxPayType1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "...", "1st Half", "2nd Half" }));
+        jPanel3.add(jComboBoxPayType1, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 5, 100, 20));
+
+        jLabel81.setFont(new java.awt.Font("Segoe UI", 2, 11)); // NOI18N
+        jLabel81.setForeground(new java.awt.Color(153, 39, 0));
+        jLabel81.setText("Enter negative (-) amount for deduction adjustment. Positive numbers will be for additional earnings.");
+        jLabel81.setVerticalTextPosition(javax.swing.SwingConstants.TOP);
+        jPanel3.add(jLabel81, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 25, 310, 40));
+
+        jLabel82.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jLabel82.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel82.setText("Enter Number of Days with 1 hour Lunch Deduction:");
+        jLabel82.setAlignmentX(0.5F);
+        jLabel82.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel3.add(jLabel82, new org.netbeans.lib.awtextra.AbsoluteConstraints(505, 65, 85, 60));
+
+        lunchDed.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        lunchDed.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        lunchDed.setText("0");
+        lunchDed.setBorder(null);
+        lunchDed.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                lunchDedActionPerformed(evt);
+            }
+        });
+        jPanel3.add(lunchDed, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 125, 85, 18));
+
+        jLabel83.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jLabel83.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel83.setText("Enter amount of adjustment on Taxable Earnings:");
+        jLabel83.setAlignmentX(0.5F);
+        jLabel83.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel3.add(jLabel83, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 65, 85, 60));
+
+        adjEarning3.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        adjEarning3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        adjEarning3.setText("0.00");
+        adjEarning3.setBorder(null);
+        jPanel3.add(adjEarning3, new org.netbeans.lib.awtextra.AbsoluteConstraints(605, 125, 85, 18));
+
+        jLabel84.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jLabel84.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel84.setText("Enter overtime rate in decimal form (sample 1.25 for 125%:");
+        jLabel84.setAlignmentX(0.5F);
+        jLabel84.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jPanel3.add(jLabel84, new org.netbeans.lib.awtextra.AbsoluteConstraints(715, 65, 90, 60));
+
+        otRate3.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        otRate3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        otRate3.setText("0.00");
+        otRate3.setBorder(null);
+        jPanel3.add(otRate3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 125, 85, 18));
+
+        jCheckPayAllowance2.setBackground(new java.awt.Color(0, 0, 0));
+        jCheckPayAllowance2.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jCheckPayAllowance2.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckPayAllowance2.setText("Pay non-taxable benefits:");
+        jPanel3.add(jCheckPayAllowance2, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 145, 190, 20));
+
+        jLabel85.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jLabel85.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel85.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
+        jLabel85.setText("Enter amount of adjustment on Non-Taxable Earnings:");
+        jLabel85.setVerticalAlignment(javax.swing.SwingConstants.BOTTOM);
+        jLabel85.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jPanel3.add(jLabel85, new org.netbeans.lib.awtextra.AbsoluteConstraints(520, 210, 170, 30));
+
+        adjBene3.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        adjBene3.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        adjBene3.setText("0.00");
+        adjBene3.setBorder(null);
+        jPanel3.add(adjBene3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 220, 85, 18));
+
+        jCheckUnpaidLeave3.setBackground(new java.awt.Color(0, 0, 0));
+        jCheckUnpaidLeave3.setFont(new java.awt.Font("Segoe UI", 1, 12)); // NOI18N
+        jCheckUnpaidLeave3.setForeground(new java.awt.Color(255, 255, 255));
+        jCheckUnpaidLeave3.setText("Apply Paid Leave Earnings:");
+        jPanel3.add(jCheckUnpaidLeave3, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 245, 190, 20));
+
+        paidLeave.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        paidLeave.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        paidLeave.setText("0.00");
+        paidLeave.setBorder(null);
+        jPanel3.add(paidLeave, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 245, 85, 18));
+
+        jTextAreaPaidLeave.setColumns(20);
+        jTextAreaPaidLeave.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jTextAreaPaidLeave.setRows(5);
+        jScrollPane6.setViewportView(jTextAreaPaidLeave);
+
+        jPanel3.add(jScrollPane6, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, 265, 232, 60));
+
+        jLabel86.setFont(new java.awt.Font("Segoe UI", 0, 11)); // NOI18N
+        jLabel86.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel86.setText("Add Notes:");
+        jPanel3.add(jLabel86, new org.netbeans.lib.awtextra.AbsoluteConstraints(500, 325, -1, -1));
+
+        jTCalcNote2.setColumns(20);
+        jTCalcNote2.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jTCalcNote2.setLineWrap(true);
+        jTCalcNote2.setRows(5);
+        jScrollPane7.setViewportView(jTCalcNote2);
+
+        jPanel3.add(jScrollPane7, new org.netbeans.lib.awtextra.AbsoluteConstraints(564, 325, 232, 40));
+
+        btnSemi1.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnSemi1.setText("Calculate");
+        btnSemi1.setBorder(javax.swing.BorderFactory.createEmptyBorder(1, 1, 1, 1));
+        btnSemi1.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSemi1ActionPerformed(evt);
+            }
+        });
+        jPanel3.add(btnSemi1, new org.netbeans.lib.awtextra.AbsoluteConstraints(700, 365, 100, 20));
+
+        jLabel87.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        jLabel87.setForeground(new java.awt.Color(255, 245, 206));
+        jLabel87.setText("REGULAR HRS:");
+        jPanel3.add(jLabel87, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 345, -1, -1));
+
+        totRegHrs.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        totRegHrs.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        totRegHrs.setText("0");
+        totRegHrs.setBorder(null);
+        totRegHrs.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        totRegHrs.setEnabled(false);
+        jPanel3.add(totRegHrs, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 345, 35, 18));
+
+        jLabel88.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        jLabel88.setForeground(new java.awt.Color(255, 245, 206));
+        jLabel88.setText("OVERTIME HRS:");
+        jPanel3.add(jLabel88, new org.netbeans.lib.awtextra.AbsoluteConstraints(255, 365, -1, -1));
+
+        overTimeHrs.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
+        overTimeHrs.setHorizontalAlignment(javax.swing.JTextField.CENTER);
+        overTimeHrs.setText("0");
+        overTimeHrs.setBorder(null);
+        overTimeHrs.setDisabledTextColor(new java.awt.Color(0, 0, 0));
+        overTimeHrs.setEnabled(false);
+        jPanel3.add(overTimeHrs, new org.netbeans.lib.awtextra.AbsoluteConstraints(345, 365, 35, 18));
+
+        jLabel89.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel89.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel89.setText("Rice Subsidy:");
+        jPanel3.add(jLabel89, new org.netbeans.lib.awtextra.AbsoluteConstraints(605, 160, -1, 20));
+
+        jLabel90.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel90.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel90.setText("Phone Allowance:");
+        jPanel3.add(jLabel90, new org.netbeans.lib.awtextra.AbsoluteConstraints(605, 175, -1, 20));
+
+        jLabel91.setFont(new java.awt.Font("Segoe UI", 0, 10)); // NOI18N
+        jLabel91.setForeground(new java.awt.Color(255, 255, 255));
+        jLabel91.setText("Clothing Allowance:");
+        jPanel3.add(jLabel91, new org.netbeans.lib.awtextra.AbsoluteConstraints(605, 190, -1, 20));
+
+        rice3.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        rice3.setForeground(new java.awt.Color(255, 255, 255));
+        rice3.setText("0.00");
+        jPanel3.add(rice3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 160, 50, 20));
+
+        phone3.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        phone3.setForeground(new java.awt.Color(255, 255, 255));
+        phone3.setText("0.00");
+        jPanel3.add(phone3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 175, 50, 20));
+
+        clothing3.setFont(new java.awt.Font("Segoe UI", 1, 10)); // NOI18N
+        clothing3.setForeground(new java.awt.Color(255, 255, 255));
+        clothing3.setText("0.00");
+        jPanel3.add(clothing3, new org.netbeans.lib.awtextra.AbsoluteConstraints(710, 190, 50, 20));
+
         jTabbedPane1.addTab("Hourly", jPanel3);
 
-        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 230, 820, 400));
+        getContentPane().add(jTabbedPane1, new org.netbeans.lib.awtextra.AbsoluteConstraints(310, 218, 820, 418));
 
         jLabel14.setText("Employee Number:");
         getContentPane().add(jLabel14, new org.netbeans.lib.awtextra.AbsoluteConstraints(15, 180, -1, -1));
@@ -1892,7 +2129,7 @@ private void calculateLeaveDeduction(String employeeNumber, List<String> unpaidL
         jLabel41.setFont(new java.awt.Font("Segoe UI", 1, 11)); // NOI18N
         jLabel41.setForeground(new java.awt.Color(255, 255, 255));
         jLabel41.setText("* Note: Press ENTER after Month selection and Year entry to load leave data.");
-        getContentPane().add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 225, -1, -1));
+        getContentPane().add(jLabel41, new org.netbeans.lib.awtextra.AbsoluteConstraints(730, 220, -1, -1));
 
         jLBG.setIcon(new javax.swing.ImageIcon(getClass().getResource("/motorph_gui/AdminPayroll.jpg"))); // NOI18N
         getContentPane().add(jLBG, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, -1, 660));
@@ -2368,6 +2605,18 @@ private void calculateLeaveDeduction(String employeeNumber, List<String> unpaidL
 
     }//GEN-LAST:event_btnSubmitActionPerformed
 
+    private void jPTypeMonthly2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jPTypeMonthly2ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jPTypeMonthly2ActionPerformed
+
+    private void lunchDedActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_lunchDedActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_lunchDedActionPerformed
+
+    private void btnSemi1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSemi1ActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_btnSemi1ActionPerformed
+
     private void applyDocumentFilters() {
     
     // Allow digits and .
@@ -2425,20 +2674,33 @@ private void calculateLeaveDeduction(String employeeNumber, List<String> unpaidL
     private void setIconImage() {
         setIconImage(Toolkit.getDefaultToolkit().getImage(getClass().getResource("Logo.jpg")));
     }
+    
+    private void initializeHourlyText() {
+        jLabel81.setText("<html>Enter negative (-) amount for deduction adjustment. Positive numbers will be for additional earnings.</html>");
+        jLabel82.setText("<html>Enter Number of Days with 1-hour Lunch Deduction:</html>");
+        jLabel83.setText("<html>Enter amount of adjustment on Taxable Earnings:</html>");
+        jLabel84.setText("<html>Enter overtime rate in decimal form (sample 1.25 for 125%:</html>");
+        jLabel85.setText("<html>Enter amount of adjustment on Non-Taxable Earnings:</html>");
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JTextField adjBene1;
     private javax.swing.JTextField adjBene2;
+    private javax.swing.JTextField adjBene3;
     private javax.swing.JTextField adjEarning1;
     private javax.swing.JTextField adjEarning2;
+    private javax.swing.JTextField adjEarning3;
+    private javax.swing.JButton btnEditTime;
     private javax.swing.JButton btnHome;
     private javax.swing.JButton btnLeave;
     private javax.swing.JButton btnMonthly;
     private javax.swing.JButton btnSemi;
+    private javax.swing.JButton btnSemi1;
     private javax.swing.JButton btnSubmit;
     private javax.swing.JButton btnSummary;
     private javax.swing.JLabel clothing1;
     private javax.swing.JLabel clothing2;
+    private javax.swing.JLabel clothing3;
     private javax.swing.JTextField in1;
     private javax.swing.JTextField in10;
     private javax.swing.JTextField in11;
@@ -2503,9 +2765,12 @@ private void calculateLeaveDeduction(String employeeNumber, List<String> unpaidL
     private javax.swing.JButton jButton9;
     private javax.swing.JCheckBox jCheckPayAllowance;
     private javax.swing.JCheckBox jCheckPayAllowance1;
+    private javax.swing.JCheckBox jCheckPayAllowance2;
     private javax.swing.JCheckBox jCheckUnpaidLeave1;
     private javax.swing.JCheckBox jCheckUnpaidLeave2;
+    private javax.swing.JCheckBox jCheckUnpaidLeave3;
     private javax.swing.JComboBox<String> jComboBoxPayType;
+    private javax.swing.JComboBox<String> jComboBoxPayType1;
     private javax.swing.JComboBox<String> jComboEmployee;
     private javax.swing.JComboBox<String> jComboMonth;
     private javax.swing.JLabel jLBG;
@@ -2588,13 +2853,26 @@ private void calculateLeaveDeduction(String employeeNumber, List<String> unpaidL
     private javax.swing.JLabel jLabel78;
     private javax.swing.JLabel jLabel79;
     private javax.swing.JLabel jLabel8;
+    private javax.swing.JLabel jLabel80;
+    private javax.swing.JLabel jLabel81;
+    private javax.swing.JLabel jLabel82;
+    private javax.swing.JLabel jLabel83;
+    private javax.swing.JLabel jLabel84;
+    private javax.swing.JLabel jLabel85;
+    private javax.swing.JLabel jLabel86;
+    private javax.swing.JLabel jLabel87;
+    private javax.swing.JLabel jLabel88;
+    private javax.swing.JLabel jLabel89;
     private javax.swing.JLabel jLabel9;
+    private javax.swing.JLabel jLabel90;
+    private javax.swing.JLabel jLabel91;
     private javax.swing.JLabel jLabelLoginName;
     private javax.swing.JLabel jLabelWelcome;
     private javax.swing.JLabel jLeaveDed1;
     private javax.swing.JLabel jLeaveDed2;
     private javax.swing.JTextField jPTypeMonthly;
     private javax.swing.JTextField jPTypeMonthly1;
+    private javax.swing.JTextField jPTypeMonthly2;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JPanel jPanel2;
     private javax.swing.JPanel jPanel3;
@@ -2603,8 +2881,11 @@ private void calculateLeaveDeduction(String employeeNumber, List<String> unpaidL
     private javax.swing.JScrollPane jScrollPane3;
     private javax.swing.JScrollPane jScrollPane4;
     private javax.swing.JScrollPane jScrollPane5;
+    private javax.swing.JScrollPane jScrollPane6;
+    private javax.swing.JScrollPane jScrollPane7;
     private javax.swing.JTextArea jTCalcNote;
     private javax.swing.JTextArea jTCalcNote1;
+    private javax.swing.JTextArea jTCalcNote2;
     private javax.swing.JTextField jTFBenefits;
     private javax.swing.JTextField jTFBenefitsAdj;
     private javax.swing.JTextField jTFNet;
@@ -2622,11 +2903,14 @@ private void calculateLeaveDeduction(String employeeNumber, List<String> unpaidL
     private javax.swing.JTextField jTFWitholding;
     private javax.swing.JTextField jTFYear;
     private javax.swing.JTabbedPane jTabbedPane1;
+    private javax.swing.JTextArea jTextAreaPaidLeave;
     private javax.swing.JButton logoutBTN;
+    private javax.swing.JTextField lunchDed;
     private javax.swing.JTextField otDur1;
     private javax.swing.JTextField otDur2;
     private javax.swing.JTextField otRate1;
     private javax.swing.JTextField otRate2;
+    private javax.swing.JTextField otRate3;
     private javax.swing.JTextField out1;
     private javax.swing.JTextField out10;
     private javax.swing.JTextField out11;
@@ -2658,11 +2942,16 @@ private void calculateLeaveDeduction(String employeeNumber, List<String> unpaidL
     private javax.swing.JTextField out7;
     private javax.swing.JTextField out8;
     private javax.swing.JTextField out9;
+    private javax.swing.JTextField overTimeHrs;
+    private javax.swing.JTextField paidLeave;
     private javax.swing.JTextArea payNote;
     private javax.swing.JLabel phone1;
     private javax.swing.JLabel phone2;
+    private javax.swing.JLabel phone3;
     private javax.swing.JLabel rice1;
     private javax.swing.JLabel rice2;
+    private javax.swing.JLabel rice3;
+    private javax.swing.JTextField totRegHrs;
     private javax.swing.JTextArea unpaidLeaveList1;
     private javax.swing.JTextArea unpaidLeaveList2;
     // End of variables declaration//GEN-END:variables
